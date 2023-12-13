@@ -1,8 +1,22 @@
-<!DOCTYPE html>
-<html>
-<script language=JavaScript>
+<DOCTYPE html>
+	<html>
+		<div class="taskbar"></div>
 
-$( document ).ready( function () {
+<div class="demo">
+	<div class="description">...</div>
+
+	<button class="open-unclosable">Open unclosable</button>
+</div>
+
+<div class="unclosable">
+	<div class="description">
+		This is a unclosable, unminimizable, unmovable window.
+		It can only by closed by hitting custom button bellow,
+		but the button is optional too.
+	</div>
+</div>
+		<script>
+			$( document ).ready( function () {
 	"use strict";
 
 	// initialize taskbar
@@ -46,12 +60,6 @@ $( document ).ready( function () {
 		});
 	}
 });
-</script>
-	<!--
-    	This script downloaded from www.JavaScriptBank.com
-    	Come to view and download over 2000+ free javascript at www.JavaScriptBank.com
-	-->
-
-</body>
-
-</html>
+		</script>
+		
+	</html>
