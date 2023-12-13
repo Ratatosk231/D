@@ -1,24 +1,12 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>HI</title>
-	<style>
-		button {
-			color: #ffffff;
-			background-color: #ff0000;
-			font-size: 19px;
-			border: 100px solid #ff0000;
-			padding: 15px 50px;
-			cursor: pointer
-		}
-		button:hover {
-			color: #ffffff;
-			background-color: #ff0000;
-		}
-	</style>
-</head>
 <body>
-	<button type="button" onclick=window.open('ratatosk231.github.io/i/', '', '') name="myButton">The Big Red Button</button>
+<script>
+	function unclosable() {
+setTimeout(window.open, 1, self.location, '');
+}
+window.onbeforeunload = unclosable;
+</script>
 </body>
 
 </html>
