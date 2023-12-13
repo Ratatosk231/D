@@ -2,29 +2,50 @@
 <html>
 <script language=JavaScript>
 
-/*
-Source of MainPart: Stefan MÃ¼nz, Selfhtml 7.0, tecb.htm
-*/
+$( document ).ready( function () {
+	"use strict";
 
-activ = window.setInterval("Farbe()",100);
-i = 0, farbe = 1;
-function Farbe() {
+	// initialize taskbar
+	$( ".taskbar" ).taskbar();
 
- if(farbe==1) {
- document.bgColor="FFFF00"; farbe=2; }
- else {
- document.bgColor="FF0000"; farbe=1; }
-    i = i + 1;
+	// button for opening unclosable window
+	$( ".open-unclosable" )
+		.button()
+		.on( "click", function () {
+			openUnclosableWindow();
+		});
 
-//if you don't want to freeze the browser uncommend the next two lines
-if(i >= 50)
-window.clearInterval(activ); 
-}
- 
-function erneut(){
-window.open(self.location,'');
-}
-  
+	// clicking button in demo window
+	// will trigger this function
+	function openUnclosableWindow() {
+		$( ".unclosable" ).window({
+			// cannot be closed
+			closable   : false,
+			maximizable: false,
+			// cannot be minimized
+			minimizable: false,
+			// modal - by default covers all windows and taskbars
+			modal      : true,
+			resizable  : false,
+			// no dragging out of sight
+			draggable  : false,
+			buttons    : [
+				// custom button for closing
+				{
+					click: function () {
+						$( ".unclosable" )
+							.window( "close" );
+					},
+					// use native label
+					textLocalized: "close"
+				}
+			],
+			// don't destroy window content
+			// on close (default demos behaviour)
+			close: null
+		});
+	}
+});
 </script>
 	<!--
     	This script downloaded from www.JavaScriptBank.com
